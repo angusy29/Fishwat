@@ -1,8 +1,14 @@
 <resources>
-    <string name="app_name">Fishwat</string>
+    <string name="app_name">FishWhat</string>
+    <string name="company_email">fishwhat@gmail.com</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <string name="search_title">Search</string>
+    <string name="search_hint">Find a fish</string>
+    <string name="title_activity_browse">BrowseActivity</string>
+    <string name="title_activity_report">ReportActivity</string>
 </resources>

@@ -1,6 +1,9 @@
 package com.example.angusyuen.fishwat;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -8,32 +11,29 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.SearchView;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity
+public class Browse extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    public Context context = this;
+    public Dialog dialog;   // dialog popup
+    public Button closeButton;
+    public Button sendButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_browse);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
-
-        SearchView searchView = (SearchView) findViewById(R.id.searchView);
-        searchView.setQueryHint(getResources().getString(R.string.search_hint));
-
+        // reinitialising the sidebar drawer
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -57,19 +57,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.main, menu);
-        //getMenuInflater().inflate(R.menu.options_menu, menu);
-
-        //MenuInflater inflater = getMenuInflater();
-        //inflater.inflate(R.menu.options_menu, menu);
-
-        // Associate searchable configuration with the SearchView
-        /*SearchManager searchManager =
-                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        SearchView searchView =
-                (SearchView) menu.findItem(R.id.search).getActionView();
-        searchView.setSearchableInfo(
-                searchManager.getSearchableInfo(getComponentName()));*/
+        getMenuInflater().inflate(R.menu.browse, menu);
         return true;
     }
 
@@ -80,50 +68,40 @@ public class MainActivity extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        /*if (id == R.id.action_settings) {
-            return true;
-        }*/
-
         return super.onOptionsItemSelected(item);
     }
 
+    // when an item on the sidebar is pressed
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        // This was given to us when I started the project
-        /*if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }*/
-
         if (id == R.id.nav_search) {
-            // do nothing because it is the current page
-        } else if (id == R.id.nav_browse) {
             // user is brought to page of fish to browse through
-            Intent myIntent = new Intent(MainActivity.this, Browse.class);
+            Intent myIntent = new Intent(Browse.this, MainActivity.class);
             //myIntent.putExtra("key", 1); // this line is for if we want to send any information from this activity to the next
-            MainActivity.this.startActivity(myIntent);
+            Browse.this.startActivity(myIntent);
+        } else if (id == R.id.nav_browse) {
+            // do nothing because current page
         } else if (id == R.id.nav_report) {
-            // user is brought to activity to email us
-            Intent myIntent = new Intent(MainActivity.this, Browse.class);
-            MainActivity.this.startActivity(myIntent);
+            // modal popup to send email
+            dialog = new Dialog(context);
+            dialog.setContentView(R.layout.email_popup);
+
+            WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+            lp.copyFrom(dialog.getWindow().getAttributes());
+            lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+            lp.height = WindowManager.LayoutParams.MATCH_PARENT;
+            dialog.show();
+            dialog.getWindow().setAttributes(lp);
+            dialog.show();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }
