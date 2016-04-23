@@ -2,5 +2,6 @@
 <searchable xmlns:android="http://schemas.android.com/apk/res/android"
     android:label="@string/app_name"
     android:hint="@string/search_hint"
-    android:searchSuggestAuthority="com.example.angusyuen.fishwat">
+    android:searchSuggestAuthority="com.example.angusyuen.fishwat"
+    android:searchSuggestIntentAction="android.Intent.action.VIEW" >
 </searchable>
