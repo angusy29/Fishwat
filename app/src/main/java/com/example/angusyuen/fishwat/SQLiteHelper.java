@@ -46,22 +46,22 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                 + COLUMN_PRIMARY_IMAGE + " VARCHAR);");
 
         db.execSQL("insert into "+ TABLE_NAME + " values ("
-        + "\"Pink brotula\", \"Brotula clarkae\", \"Fish....\", \"Acceptable\", 1, \"bro1.jpg,bro2.jpg,bro3.jpg,bro4.jpgg,bro5.jpg,bro6.jpg\",  \"bro2.jpg\");");
+        + "\"Pink brotula\", \"Brotula clarkae\", \"White to pale pink when fresh, while white or yellow or when thawed.\", \"Acceptable\", 1, \"bro1.jpg,bro2.jpg,bro3.jpg,bro4.jpgg,bro5.jpg,bro6.jpg\",  \"bro2.jpg\");");
 //
         db.execSQL("insert into "+ TABLE_NAME + " values ("
-        + "\"Pacific crevalle jack\", \"Caranx caninus\", \"Fish...\", \"Acceptable\", 1, \"car1.jpg,car2.jpg\", \"car2.jpg\")");
+        + "\"Pacific crevalle jack\", \"Caranx caninus\", \"A deep red with white strands.\", \"Acceptable\", 1, \"car1.jpg,car2.jpg\", \"car2.jpg\")");
 
         db.execSQL("insert into "+ TABLE_NAME + " values ("
-                + "\"Yellowfin snook\", \"Centropomus robalito\", \"Fish...\", \"Recommended\", 0, \"cen1.jpg,cen2.jpg\", \"cen1.jpg\")");
+                + "\"Yellowfin snook\", \"Centropomus robalito\", \"White to pink colouration.\", \"Recommended\", 0, \"cen1.jpg,cen2.jpg\", \"cen1.jpg\")");
 
         db.execSQL("insert into "+ TABLE_NAME + " values ("
-                + "\"Mahi-mahi (Dolphinfish)\", \"Coryphaena hippurus\", \"Fish...\", \"Recommended\", 1, \"cor1.jpg,cor2.jpg\", \"cor2.jpg\")");
+                + "\"Mahi-mahi (Dolphinfish)\", \"Coryphaena hippurus\", \"White when fresh, while a darker colour when thawed.\", \"Recommended\", 1, \"cor1.jpg,cor2.jpg\", \"cor2.jpg\")");
 
         db.execSQL("insert into "+ TABLE_NAME + " values ("
-                + "\"Whitefin weakfish\", \"Cynoscion albus\", \"Fish...\", \"Acceptable\", 0, \"cyna1.jpg,cyna2.jpg,cyna3.jpg,cyna4.jpg,cyna5.jpg,cyna6.jpg\", \"cyna1.jpg\")");
+                + "\"Whitefin weakfish\", \"Cynoscion albus\", \"Pink to white when fresh, tending towards yellow when thawed. \", \"Acceptable\", 0, \"cyna1.jpg,cyna2.jpg,cyna3.jpg,cyna4.jpg,cyna5.jpg,cyna6.jpg\", \"cyna1.jpg\")");
 
         db.execSQL("insert into "+ TABLE_NAME + " values ("
-                + "\"Weakfish\", \"Cynoscion squamipinnis\", \"Fish...\", \"Recommended\", 1, \"cyns1.jpg\", \"cyns1.jpg\")");
+                + "\"Weakfish\", \"Cynoscion squamipinnis\", \"Pink to white when fresh, tending towards yellow when thawed.\", \"Recommended\", 1, \"cyns1.jpg\", \"cyns1.jpg\")");
 
 //        db.execSQL("insert into "+ TABLE_NAME + " values ("
 //                + "\"Indo-Pacific sailfish\", \"Istiophorus platypterus\", \"Fish...\", \"Not\", \"\", \"\", \"\")");
