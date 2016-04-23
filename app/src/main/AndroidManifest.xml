@@ -21,7 +21,16 @@
         <activity
             android:name=".Browse"
             android:label="@string/title_activity_browse"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FishDetails"
+            android:label="@string/title_activity_fish_details"
+            android:parentActivityName=".Browse"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.angusyuen.fishwat.Browse" />
+        </activity>
     </application>
 
 </manifest>

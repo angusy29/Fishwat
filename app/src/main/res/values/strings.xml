@@ -11,4 +11,5 @@
     <string name="search_hint">Find a fish</string>
     <string name="title_activity_browse">BrowseActivity</string>
     <string name="title_activity_report">ReportActivity</string>
+    <string name="title_activity_fish_details">FishDetails</string>
 </resources>
