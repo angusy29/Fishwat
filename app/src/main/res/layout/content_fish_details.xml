@@ -1,8 +1,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:showIn="@layout/app_bar_fish_details">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -44,9 +46,19 @@
                 android:layout_height="wrap_content"
                 android:text="New Text"
                 android:id="@+id/fishName"
-                android:padding="20dp"
                 android:textSize="24sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:paddingLeft="20dp"
+                android:paddingTop="5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/scFishName"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                android:paddingLeft="20dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -54,25 +66,51 @@
                 android:text="New Text"
                 android:id="@+id/descriptionCard"
                 android:textSize="12sp"
-                android:paddingLeft="20dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New Text"
-                android:id="@+id/consumptionStatusCard"
                 android:paddingLeft="20dp"
-                android:textSize="14sp"
-                android:layout_marginTop="20dp" />
+                android:paddingTop="10dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New Text"
-                android:id="@+id/seasonStatusCard"
-                android:paddingLeft="20dp"
-                android:paddingTop="10dp"
-                android:textSize="14sp" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/consumptionImage"
+                    android:src="@android:drawable/btn_star_big_on" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New Text"
+                    android:id="@+id/consumptionStatusCard"
+                    android:paddingLeft="20dp"
+                    android:textSize="14sp"
+                    android:layout_marginTop="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/seasonImage"
+                    android:src="@android:drawable/btn_star_big_on" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New Text"
+                    android:id="@+id/seasonStatusCard"
+                    android:paddingLeft="20dp"
+                    android:textSize="14sp"
+                    android:layout_gravity="bottom" />
+            </LinearLayout>
 
         </LinearLayout>
     </android.support.v7.widget.CardView>

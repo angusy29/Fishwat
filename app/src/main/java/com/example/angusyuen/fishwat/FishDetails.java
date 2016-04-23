@@ -31,10 +31,13 @@ public class FishDetails extends AppCompatActivity
     private Context context = this;
 
     private TextView fishName;
+    private TextView scFishName;
     private TextView description;
     private TextView consumptionStatus;
     private TextView seasonStatus;
     private ImageView fishPhoto;
+    private ImageView consumptionImage;
+    private ImageView seasonImage;
 
     // front end stuff
     private Dialog dialog;   // dialog popup
@@ -160,6 +163,9 @@ public class FishDetails extends AppCompatActivity
         consumptionStatus = (TextView) findViewById(R.id.consumptionStatusCard);
         seasonStatus = (TextView) findViewById(R.id.seasonStatusCard);
         fishPhoto = (ImageView) findViewById(R.id.largeFishPhoto);
+        scFishName = (TextView) findViewById(R.id.scFishName);
+        consumptionImage = (ImageView) findViewById(R.id.consumptionImage);
+        seasonImage = (ImageView) findViewById(R.id.seasonImage);
 
         closeButton = (Button) dialog.findViewById(R.id.closeButton);
         sendButton = (Button) dialog.findViewById(R.id.sendButton);
@@ -197,9 +203,12 @@ public class FishDetails extends AppCompatActivity
             }
         });
 
-        fishName.setText(getIntent().getStringExtra("name"));
+        String normalName = getIntent().getStringExtra("name").replaceFirst("\\s[A-Z].*", "");
+        String scientificName = getIntent().getStringExtra("name").replaceFirst("[A-Z][a-z ]*", "");
+        fishName.setText(normalName);
         description.setText(getIntent().getStringExtra("description"));
         String imageString = getIntent().getStringExtra("image");
+        scFishName.setText(scientificName);
         //imageString = imageString.substring(0, imageString.length() - 4);
 
         System.out.println(imageString);
@@ -207,16 +216,20 @@ public class FishDetails extends AppCompatActivity
         System.out.println(resID);
         fishPhoto.setImageResource(resID);
 
-        if (getIntent().getExtras().getBoolean("isConsumable")) {
-            consumptionStatus.setText("Fish is not consumable!");
-        } else {
-            consumptionStatus.setText("Fish is consumable!");
+        consumptionStatus.setText("Sustainability");
+        if (getIntent().getExtras().getString("consumptionStatus").equals("Acceptable")) {
+            // medium
+        } else if (getIntent().getExtras().getString("consumptionStatus").equals("Recommended")){
+            consumptionImage.setImageDrawable(getResources().getDrawable(R.drawable.btn_star_big_on));
+        } else if (getIntent().getExtras().getString("consumptionStatus").equals("Not")) {
+            consumptionImage.setImageDrawable(getResources().getDrawable(R.drawable.star_big_off));
         }
 
-        if (getIntent().getExtras().getBoolean("isSeasonable")) {
-            seasonStatus.setText("This fish is currently not in season.");
+        seasonStatus.setText("In season.");
+        if (getIntent().getExtras().getInt("seasonStatus") == 1) {
+            seasonImage.setImageDrawable(getResources().getDrawable(R.drawable.btn_star_big_on));
         } else {
-            seasonStatus.setText("Fish is in season!");
+            seasonImage.setImageDrawable(getResources().getDrawable(R.drawable.star_big_off));
         }
 
     }
