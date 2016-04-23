@@ -12,7 +12,7 @@
         jar="/Users/angusyuen/Documents/Fishwat/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         revision="23.0.2"
-        sha1="9c0c585693fbf165a2a15979e59dac2bfdbbc798">
+        sha1="181196627130d4c0d9d00190174e823e94c28d66">
         <dex dex="/Users/angusyuen/Documents/Fishwat/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_d06c5d2729759cdd086062d180329799a30e29c0/classes.dex" />
     </item>
     <item
@@ -33,7 +33,7 @@
         jar="/Users/angusyuen/Documents/Fishwat/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         revision="23.0.2"
-        sha1="13bebac9bb6eed6bc9238ada1598596a923a1fe1">
+        sha1="571415a9ed6c73350a192ff348d97edeba8d0b3d">
         <dex dex="/Users/angusyuen/Documents/Fishwat/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_c83d1a20e32526a505852e7ffcf03873b04f0305/classes.dex" />
     </item>
     <item
