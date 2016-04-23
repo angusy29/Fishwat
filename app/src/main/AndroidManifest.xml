@@ -86,6 +86,11 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps"></activity>
+        <provider
+            android:name=".CustomSuggestionProvider"
+            android:authorities="com.example.angusyuen.fishwat"
+            android:enabled="true"
+            android:exported="true"></provider>
     </application>
 
 </manifest>
