@@ -27,8 +27,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         TextView scientificFishName;
         ImageView image;
         TextView description;
-        boolean isConsumable;
-        boolean isSeasonable;
+        int isConsumable;
+        int isSeasonable;
 
         // one particular "card" information holder
         public ViewHolder(View v) {

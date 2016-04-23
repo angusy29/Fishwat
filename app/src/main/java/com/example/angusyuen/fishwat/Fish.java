@@ -4,29 +4,35 @@ package com.example.angusyuen.fishwat;
  * Created by angusyuen on 23/04/16.
  */
 public class Fish {
+    private Integer id;
     private String nameOfFish;
     private String scientificNameOfFish;
     private String description;
-    private boolean isConsumable;
-    private boolean isSeasonable;
+    private int isConsumable;
+    private int isSeasonable;
+    private String images;
+    private String primaryImage;
 
-    public Fish(String name, String scientificNameOfFish, String description, boolean consumptionStatus, boolean seasonStatus) {
+    public Fish(String name, String scientificNameOfFish, String description, int consumptionStatus,
+                int seasonStatus, String images, String primaryImage) {
         nameOfFish = name;
         this.scientificNameOfFish = scientificNameOfFish;
         this.description = description;
         isConsumable = consumptionStatus;
         isSeasonable = seasonStatus;
+        this.images = images;
+        this.primaryImage = primaryImage;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public boolean getIsConsumable() {
+    public int getIsConsumable() {
         return isConsumable;
     }
 
-    public boolean getIsSeasonable() {
+    public int getIsSeasonable() {
         return isSeasonable;
     }
 
