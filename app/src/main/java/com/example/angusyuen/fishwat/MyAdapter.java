@@ -27,7 +27,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         TextView scientificFishName;
         ImageView image;
         TextView description;
-        int isConsumable;
+        String isConsumable;
         int isSeasonable;
 
         // one particular "card" information holder

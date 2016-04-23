@@ -23,7 +23,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public static final String COLUMN_SCIENTIFIC_NAME = "SCIENTIFIC_NAME";
     public static final String COLUMN_DESCRIPTION = "DESCRIPTION";
     public static final String COLUMN_RECOMMENDATION = "RECOMMENDATION";
-    public static final Integer COLUMN_IN_SEASON = "IN_SEASON";
+    public static final String COLUMN_IN_SEASON = "IN_SEASON";
     public static final String COLUMN_IMAGES = "IMAGES";
     public static final String COLUMN_PRIMARY_IMAGE = "PRIMARY_IMAGE";
 
@@ -40,28 +40,28 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                 + COLUMN_SCIENTIFIC_NAME + " VARCHAR, "
                 + COLUMN_DESCRIPTION+ " VARCHAR, "
                 + COLUMN_RECOMMENDATION + " VARCHAR, "
-                + COLUMN_IN_SEASON + " INTEGER, "
+                + COLUMN_IN_SEASON + " VARCHAR, "
                 + COLUMN_IMAGES + " VARCHAR, "
                 + COLUMN_PRIMARY_IMAGE + " VARCHAR);");
 
         db.execSQL("insert into "+ TABLE_NAME + " values ("
-        + "\"Pink brotula\", \"Brotula clarkae\", \"Fish....\", \"Acceptable\", 1, \"BRO1.JPG,BRO2.JPG,BRO3.JPG,BRO4.JPG,BRO5.JPG,BRO6.JPG\",  \"BRO2.JPG\")");
+        + "\"Pink brotula\", \"Brotula clarkae\", \"Fish....\", \"Acceptable\", 1, \"bro1.jpg,bro2.jpg,bro3.jpg,bro4.jpgg,bro5.jpg,bro6.jpg\",  \"bro2.jpg\")");
 
         db.execSQL("insert into "+ TABLE_NAME + " values ("
-        + "\"Pacific crevalle jack\", \"Caranx caninus\", \"Fish...\", \"Acceptable\", 1, \"CAR1.JPG,CAR2.JPG\", \"CAR2.JPG\")");
+        + "\"Pacific crevalle jack\", \"Caranx caninus\", \"Fish...\", \"Acceptable\", 1, \"car1.jpg,car2.jpg\", \"car2.jpg\")");
 
 
         db.execSQL("insert into "+ TABLE_NAME + " values ("
-                + "\"Yellowfin snook\", \"Centropomus robalito\", \"Fish...\", \"Recommended\", 0, \"CEN1.JPG,CEN2.JPG\", \"CEN1.JPG\")");
+                + "\"Yellowfin snook\", \"Centropomus robalito\", \"Fish...\", \"Recommended\", 0, \"cen1.jpg,cen2.jpg\", \"cen1.jpg\")");
 
         db.execSQL("insert into "+ TABLE_NAME + " values ("
-                + "\"Mahi-mahi (Dolphinfish)\", \"Coryphaena hippurus\", \"Fish...\", \"Recommended\", 1, \"COR1.JPG,COR2.JPG\", \"COR2.JPG\")");
+                + "\"Mahi-mahi (Dolphinfish)\", \"Coryphaena hippurus\", \"Fish...\", \"Recommended\", 1, \"cor1.jpg,cor2.jpg\", \"cor2.jpg\")");
 
         db.execSQL("insert into "+ TABLE_NAME + " values ("
-                + "\"Whitefin weakfish\", \"Cynoscion albus\", \"Fish...\", \"Acceptable\", 0, \"CYNA1.JPG,CYNA2.JPG,CYNA3.JPG,CYNA4.JPG,CYNA5.JPG,CYNA6.JPG\", \"CYNA1.JPG\")");
+                + "\"Whitefin weakfish\", \"Cynoscion albus\", \"Fish...\", \"Acceptable\", 0, \"cyna1.jpg,cyna2.jpg,cyna3.jpg,cyna4.jpg,cyna5.jpg,cyna6.jpg\", \"cyna1.jpg\")");
 
         db.execSQL("insert into "+ TABLE_NAME + " values ("
-                + "\"Weakfish\", \"Cynoscion squamipinnis\", \"Fish...\", \"Recommended\", 1, \"CYNS1.JPG\", \"CYNS1.JPG\")");
+                + "\"Weakfish\", \"Cynoscion squamipinnis\", \"Fish...\", \"Recommended\", 1, \"cyns1.jpg\", \"cyns1.jpg\")");
 
 //        db.execSQL("insert into "+ TABLE_NAME + " values ("
 //                + "\"Indo-Pacific sailfish\", \"Istiophorus platypterus\", \"Fish...\", \"Not\", \"\", \"\", \"\")");
