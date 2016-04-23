@@ -21,12 +21,18 @@ import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class FishDetails extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private Context context = this;
+
+    private TextView fishName;
+    private TextView description;
+    private TextView consumptionStatus;
+    private TextView seasonStatus;
 
     // front end stuff
     private Dialog dialog;   // dialog popup
@@ -39,17 +45,8 @@ public class FishDetails extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fish_details);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        initialiseGUI();
     }
 
     @Override
@@ -90,6 +87,21 @@ public class FishDetails extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        if (id == R.id.nav_search) {
+            // user is brought to page of fish to browse through
+            Intent myIntent = new Intent(FishDetails.this, MainActivity.class);
+            //myIntent.putExtra("key", 1); // this line is for if we want to send any information from this activity to the next
+            FishDetails.this.startActivity(myIntent);
+        } else if (id == R.id.nav_browse) {
+            // user is brought to page of fish to browse through
+            Intent myIntent = new Intent(FishDetails.this, Browse.class);
+            //myIntent.putExtra("key", 1); // this line is for if we want to send any information from this activity to the next
+            FishDetails.this.startActivity(myIntent);
+        } else if (id == R.id.nav_report) {
+            // modal popup to send email
+            dialog.getWindow().setAttributes(lp);
+            dialog.show();
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -122,6 +134,12 @@ public class FishDetails extends AppCompatActivity
         lp.copyFrom(dialog.getWindow().getAttributes());
         lp.width = WindowManager.LayoutParams.MATCH_PARENT;
         lp.height = WindowManager.LayoutParams.MATCH_PARENT;
+
+        fishName = (TextView) findViewById(R.id.fishName);
+        description = (TextView) this.findViewById(R.id.descriptionCard);
+        consumptionStatus = (TextView) findViewById(R.id.consumptionStatusCard);
+        seasonStatus = (TextView) findViewById(R.id.seasonStatusCard);
+
 
         closeButton = (Button) dialog.findViewById(R.id.closeButton);
         sendButton = (Button) dialog.findViewById(R.id.sendButton);
@@ -158,5 +176,21 @@ public class FishDetails extends AppCompatActivity
                 }
             }
         });
+
+        fishName.setText(getIntent().getStringExtra("name"));
+        description.setText(getIntent().getStringExtra("description"));
+
+        if (getIntent().getExtras().getBoolean("isConsumable")) {
+            consumptionStatus.setText("Fish is consumable!");
+        } else {
+            consumptionStatus.setText("Fish is not consumable!");
+        }
+
+        if (getIntent().getExtras().getBoolean("isSeasonable")) {
+            seasonStatus.setText("Fish is in season!");
+        } else {
+            seasonStatus.setText("This fish is currently not in season.");
+        }
+
     }
 }

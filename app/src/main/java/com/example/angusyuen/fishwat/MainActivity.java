@@ -38,29 +38,8 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
-
-        SearchView searchView = (SearchView) findViewById(R.id.searchView);
-        searchView.setQueryHint(getResources().getString(R.string.search_hint));
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        initialiseGUI();
     }
 
     @Override
@@ -165,7 +144,7 @@ public class MainActivity extends AppCompatActivity
         dialog = new Dialog(context);
         dialog.setContentView(R.layout.email_popup);
 
-        emailContent = (EditText) findViewById(R.id.emailContent);
+        emailContent = (EditText) dialog.findViewById(R.id.emailContent);
 
         // set the dialog Contact Us box to 90% of the window size
         lp = new WindowManager.LayoutParams();

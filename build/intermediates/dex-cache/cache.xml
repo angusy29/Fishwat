@@ -1,12 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" >
-
-    <item
-        jar="/Users/angusyuen/Documents/Fishwat/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="c1df8b3039b1dcfeec4761b6a1332f54af884e3c">
-        <dex dex="/Users/angusyuen/Documents/Fishwat/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_d06c5d2729759cdd086062d180329799a30e29c0/classes.dex" />
-    </item>
-
-</items>
+<items version="2" />
