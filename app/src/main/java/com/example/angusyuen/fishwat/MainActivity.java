@@ -1,6 +1,11 @@
 package com.example.angusyuen.fishwat;
 
+import android.annotation.TargetApi;
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -10,10 +15,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    public Context context = this;
+
+    // front end stuff
+    private Dialog dialog;   // dialog popup
+    private Button closeButton;
+    private Button sendButton;
+    private EditText emailContent;
+    WindowManager.LayoutParams lp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,13 +136,77 @@ public class MainActivity extends AppCompatActivity
             //myIntent.putExtra("key", 1); // this line is for if we want to send any information from this activity to the next
             MainActivity.this.startActivity(myIntent);
         } else if (id == R.id.nav_report) {
-            // user is brought to activity to email us
-            Intent myIntent = new Intent(MainActivity.this, Browse.class);
-            MainActivity.this.startActivity(myIntent);
+            // modal popup to send email
+            dialog.getWindow().setAttributes(lp);
+            dialog.show();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    // initialises all the front end, link it to the backend id's
+    public void initialiseGUI() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        // reinitialising the sidebar drawer
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        // popup dialog for contacting us
+        dialog = new Dialog(context);
+        dialog.setContentView(R.layout.email_popup);
+
+        emailContent = (EditText) findViewById(R.id.emailContent);
+
+        // set the dialog Contact Us box to 90% of the window size
+        lp = new WindowManager.LayoutParams();
+        lp.copyFrom(dialog.getWindow().getAttributes());
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.height = WindowManager.LayoutParams.MATCH_PARENT;
+
+        closeButton = (Button) dialog.findViewById(R.id.closeButton);
+        sendButton = (Button) dialog.findViewById(R.id.sendButton);
+
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        sendButton.setOnClickListener(new View.OnClickListener() {
+            @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+
+                Intent emailIntent = new Intent(Intent.ACTION_SEND);
+                emailIntent.setData(Uri.parse("mailto:"));
+                emailIntent.setType("text/plain");
+
+                emailIntent.putExtra(Intent.EXTRA_EMAIL, getResources().getString(R.string.company_email));
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Fishwat");
+                emailIntent.putExtra(Intent.EXTRA_TEXT, emailContent.getText());
+
+                try {
+                    startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+                    finish();
+
+                    Toast toast = new Toast(getApplicationContext());
+                    toast.makeText(getApplicationContext(), "Message sent!", Toast.LENGTH_SHORT).show();
+                } catch (android.content.ActivityNotFoundException ex) {
+
+                }
+            }
+        });
     }
 }
