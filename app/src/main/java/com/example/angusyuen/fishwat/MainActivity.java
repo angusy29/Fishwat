@@ -116,8 +116,25 @@ public class MainActivity extends AppCompatActivity
             MainActivity.this.startActivity(myIntent);
         } else if (id == R.id.nav_report) {
             // modal popup to send email
-            dialog.getWindow().setAttributes(lp);
-            dialog.show();
+            /*dialog.getWindow().setAttributes(lp);
+            dialog.show();*/
+            Intent emailIntent = new Intent(Intent.ACTION_SEND);
+            emailIntent.setData(Uri.parse("mailto:"));
+            emailIntent.setType("text/plain");
+
+            emailIntent.putExtra(Intent.EXTRA_EMAIL, getResources().getString(R.string.company_email));
+            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Fishwat");
+            //emailIntent.putExtra(Intent.EXTRA_TEXT, emailContent.getText());
+
+            try {
+                startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+                finish();
+
+                //Toast toast = new Toast(getApplicationContext());
+                //toast.makeText(getApplicationContext(), "Message sent!", Toast.LENGTH_SHORT).show();
+            } catch (android.content.ActivityNotFoundException ex) {
+
+            }
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -174,14 +191,14 @@ public class MainActivity extends AppCompatActivity
 
                 emailIntent.putExtra(Intent.EXTRA_EMAIL, getResources().getString(R.string.company_email));
                 emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Fishwat");
-                emailIntent.putExtra(Intent.EXTRA_TEXT, emailContent.getText());
+                //emailIntent.putExtra(Intent.EXTRA_TEXT, emailContent.getText());
 
                 try {
                     startActivity(Intent.createChooser(emailIntent, "Send mail..."));
                     finish();
 
-                    Toast toast = new Toast(getApplicationContext());
-                    toast.makeText(getApplicationContext(), "Message sent!", Toast.LENGTH_SHORT).show();
+                    //Toast toast = new Toast(getApplicationContext());
+                    //toast.makeText(getApplicationContext(), "Message sent!", Toast.LENGTH_SHORT).show();
                 } catch (android.content.ActivityNotFoundException ex) {
 
                 }
