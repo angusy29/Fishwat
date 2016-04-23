@@ -201,7 +201,12 @@ public class Browse extends AppCompatActivity
 
     public void initialiseBackend() {
         allFish = new ArrayList<Fish>();
+
+
         SQLiteHelper helper = new SQLiteHelper(Browse.this);
+
+        ArrayList<String> list = helper.getAllTableName();
+
         allFish = helper.getAllRecords();
 
 

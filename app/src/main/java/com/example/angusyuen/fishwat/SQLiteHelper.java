@@ -35,6 +35,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+
         db.execSQL("create table " + TABLE_NAME + " ( "
                 + COLUMN_ID + " VARCHAR PRIMARY KEY,"
                 + COLUMN_SCIENTIFIC_NAME + " VARCHAR, "
@@ -45,11 +46,10 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                 + COLUMN_PRIMARY_IMAGE + " VARCHAR);");
 
         db.execSQL("insert into "+ TABLE_NAME + " values ("
-        + "\"Pink brotula\", \"Brotula clarkae\", \"Fish....\", \"Acceptable\", 1, \"bro1.jpg,bro2.jpg,bro3.jpg,bro4.jpgg,bro5.jpg,bro6.jpg\",  \"bro2.jpg\")");
-
+        + "\"Pink brotula\", \"Brotula clarkae\", \"Fish....\", \"Acceptable\", 1, \"bro1.jpg,bro2.jpg,bro3.jpg,bro4.jpgg,bro5.jpg,bro6.jpg\",  \"bro2.jpg\");");
+//
         db.execSQL("insert into "+ TABLE_NAME + " values ("
         + "\"Pacific crevalle jack\", \"Caranx caninus\", \"Fish...\", \"Acceptable\", 1, \"car1.jpg,car2.jpg\", \"car2.jpg\")");
-
 
         db.execSQL("insert into "+ TABLE_NAME + " values ("
                 + "\"Yellowfin snook\", \"Centropomus robalito\", \"Fish...\", \"Recommended\", 0, \"cen1.jpg,cen2.jpg\", \"cen1.jpg\")");
@@ -94,6 +94,8 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     public ArrayList<Fish> getAllRecords() {
         database = this.getReadableDatabase();
+
+
         Cursor cursor = database.query(TABLE_NAME, null, null, null, null, null, null);
 
         ArrayList<Fish> fishes = new ArrayList<Fish>();
@@ -102,8 +104,19 @@ public class SQLiteHelper extends SQLiteOpenHelper {
             for (int i = 0; i < cursor.getCount(); i++) {
                 cursor.moveToNext();
 
-                /*fish = new Fish(cursor.getString(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), Integer.parseInt(cursor.getString(4)), cursor.getString(5));
-                fishes.add(fish);*/
+                System.out.println("Hello world");
+                System.out.println(cursor.getString(0));
+                System.out.println(cursor.getString(1));
+                System.out.println(cursor.getString(2));
+                System.out.println(cursor.getString(3));
+                System.out.println(cursor.getString(4));
+                System.out.println(cursor.getString(5));
+                System.out.println(cursor.getString(6));
+
+
+
+                fish = new Fish(cursor.getString(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), Integer.parseInt(cursor.getString(4)), cursor.getString(5),cursor.getString(6));
+                fishes.add(fish);
             }
         }
         cursor.close();
