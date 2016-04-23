@@ -102,6 +102,9 @@ public class FishDetails extends AppCompatActivity
             Intent myIntent = new Intent(FishDetails.this, Browse.class);
             //myIntent.putExtra("key", 1); // this line is for if we want to send any information from this activity to the next
             FishDetails.this.startActivity(myIntent);
+        } else if (id == R.id.nav_maps) {
+            Intent myIntent = new Intent(FishDetails.this, MapsActivity.class);
+            FishDetails.this.startActivity(myIntent);
         } else if (id == R.id.nav_report) {
             // modal popup to send email
             /*dialog.getWindow().setAttributes(lp);

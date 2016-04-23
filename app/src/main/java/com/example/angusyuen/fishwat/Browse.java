@@ -33,6 +33,7 @@ public class Browse extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private ArrayList<Fish> allFish;
+    SQLiteHelper helper;    // database of fish
 
     private Context context = this;
 
@@ -97,6 +98,9 @@ public class Browse extends AppCompatActivity
             Browse.this.startActivity(myIntent);
         } else if (id == R.id.nav_browse) {
             // do nothing because current page
+        } else if (id == R.id.nav_maps) {
+            Intent myIntent = new Intent(Browse.this, MapsActivity.class);
+            Browse.this.startActivity(myIntent);
         } else if (id == R.id.nav_report) {
             // modal popup to send email
             /*dialog.getWindow().setAttributes(lp);

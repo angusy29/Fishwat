@@ -19,6 +19,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -204,12 +205,22 @@ public class MainActivity extends AppCompatActivity
         sv.setSearchableInfo(searchableInfo);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.cameraFAB);
-        fab.setOnClickListener(new View.OnClickListener() {
+        fab.setOnHoverListener(new View.OnHoverListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Identify the fish by taking a photo!", Snackbar.LENGTH_LONG)
+            public boolean onHover(View v, MotionEvent event) {
+                Snackbar.make(v, "Identify the fish by taking a photo!", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                return false;
             }
         });
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+                startActivityForResult(intent, 0);
+            }
+        });
+
     }
 }

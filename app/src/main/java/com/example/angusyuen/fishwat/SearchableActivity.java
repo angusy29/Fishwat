@@ -9,6 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.view.MotionEvent;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -39,15 +40,6 @@ public class SearchableActivity extends AppCompatActivity
         setContentView(R.layout.activity_searchable);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -114,11 +106,15 @@ public class SearchableActivity extends AppCompatActivity
 
         if (id == R.id.nav_search) {
             // do nothing because it is the current page
+            Intent myIntent = new Intent(SearchableActivity.this, MainActivity.class);
+            SearchableActivity.this.startActivity(myIntent);
         } else if (id == R.id.nav_browse) {
             // user is brought to page of fish to browse through
             Intent myIntent = new Intent(SearchableActivity.this, Browse.class);
             //myIntent.putExtra("key", 1); // this line is for if we want to send any information from this activity to the next
             SearchableActivity.this.startActivity(myIntent);
+        } else if (id == R.id.nav_maps) {
+
         } else if (id == R.id.nav_report) {
             // modal popup to send email
             /*dialog.getWindow().setAttributes(lp);
@@ -207,6 +203,24 @@ public class SearchableActivity extends AppCompatActivity
                 } catch (android.content.ActivityNotFoundException ex) {
 
                 }
+            }
+        });
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.cameraFAB);
+        fab.setOnHoverListener(new View.OnHoverListener() {
+            @Override
+            public boolean onHover(View v, MotionEvent event) {
+                Snackbar.make(v, "Identify the fish by taking a photo!", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+                return false;
+            }
+        });
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+                startActivityForResult(intent, 0);
             }
         });
 

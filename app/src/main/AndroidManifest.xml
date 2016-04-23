@@ -91,6 +91,7 @@
             android:authorities="com.example.angusyuen.fishwat"
             android:enabled="true"
             android:exported="true"></provider>
+        <uses-permission android:name="android.permission.CAMERA"></uses-permission>
     </application>
 
 </manifest>

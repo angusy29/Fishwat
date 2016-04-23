@@ -4,7 +4,10 @@ import android.app.SearchManager;
 import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
+
+import java.util.ArrayList;
 
 public class CustomSuggestionProvider extends ContentProvider {
     public CustomSuggestionProvider() {
@@ -49,6 +52,10 @@ public class CustomSuggestionProvider extends ContentProvider {
             // query contains the users search
             // return a cursor with appropriate data
             System.out.println(query);
+
+            SQLiteHelper helper = new SQLiteHelper(getContext());
+            ArrayList<Fish> allFish = helper.getAllRecords();
+
         }
 
         throw new UnsupportedOperationException("Not yet implemented");
