@@ -1,2 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <items version="2" />
+    <item
+        jar="/home/ben/Projects/android/Fishwat/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="/home/ben/Projects/android/Fishwat/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.1.1_2301b64ef35e1496d48e8233a090f0c3960ee5d8/classes.dex" />
+    </item>
+    <item
+        jar="/home/ben/Projects/android/Fishwat/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="/home/ben/Projects/android/Fishwat/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.1.1_ab2d0ee017efe8459502fd4136e64b9a94ae5251/classes.dex" />
+    </item>
+    <item
+        jar="/home/ben/Projects/android/Fishwat/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="bd44443fe657bd152985e4c746c22c7445c2e717">
+        <dex dex="/home/ben/Projects/android/Fishwat/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_94d9d067c67dd105a77f3e0c015887d9c64fa4ed/classes.dex" />
+    </item>
+    <item
+        jar="/home/ben/Projects/android/Fishwat/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="/home/ben/Projects/android/Fishwat/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.1.1_ea1f81e87f5be652842b5563f32b202abd4c9382/classes.dex" />
+    </item>
+    <item
+        jar="/home/ben/Projects/android/Fishwat/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.1.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="5e412e954a24c5310a459c09870e4e2081aceb03">
+        <dex dex="/home/ben/Projects/android/Fishwat/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-23.1.1_bdd5ba4b56e41ebfb2956624b450d5f29725877e/classes.dex" />
+    </item>
+    <item
+        jar="/home/ben/Projects/android/Fishwat/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="/home/ben/Projects/android/Fishwat/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.1.1_a72c6f5d93b254e16467b69e7cee17a47d4d8f60/classes.dex" />
+    </item>
+    <item
+        jar="/home/ben/Projects/android/Fishwat/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="/home/ben/Projects/android/Fishwat/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.1.1_485f2e8e2a1a1d295de0cf284de1e863e4cc37c5/classes.dex" />
+    </item>
+    <item
+        jar="/home/ben/Projects/android/Fishwat/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="94e27bf41ac4e8e220bc7162f809ce2768396d04">
+        <dex dex="/home/ben/Projects/android/Fishwat/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_0fd75c773304c899f0f31a7d154e1bab820868b5/classes.dex" />
+    </item>
+    <item
+        jar="/home/ben/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="/home/ben/Projects/android/Fishwat/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.1.1_beb1abd69f29f1ef510a10b6be76b87f072c1c92/classes.dex" />
+    </item>
+
+</items>
