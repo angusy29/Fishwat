@@ -183,12 +183,17 @@ public class Browse extends AppCompatActivity
 
     public void initialiseBackend() {
         allFish = new ArrayList<Fish>();
+        SQLiteHelper helper = new SQLiteHelper(Browse.this);
+        allFish = helper.getAllRecords();
+
 
         // for each item in the database we want to create a new fish object
-        for (int i = 0; i < 5; i++) {
-            Fish newFish = new Fish("Salmon", "Salmonella");
-            allFish.add(newFish);
-        }
+//        for (int i = 0; i < 5; i++) {
+//            Fish newFish = new Fish("Salmon", "Salmonella");
+//
+////            String name, String scientificNameOfFish, String images, String recommendation, Integer inSeason, String primaryImage
+//            allFish.add(newFish);
+//        }
 
         fishAdapter = new MyAdapter(allFish);
         fishRecyclerView.setAdapter(fishAdapter);
