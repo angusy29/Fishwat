@@ -10,6 +10,12 @@
             android:id="@+id/nav_browse"
             android:icon="@android:drawable/ic_menu_gallery"
             android:title="Browse" />
+
+        <item
+            android:id="@+id/nav_maps"
+            android:icon="@android:drawable/ic_dialog_map"
+            android:title="FishMap"/>
+
         <!--<item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
