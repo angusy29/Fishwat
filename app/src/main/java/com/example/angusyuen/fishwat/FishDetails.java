@@ -159,7 +159,7 @@ public class FishDetails extends AppCompatActivity
         description = (TextView) this.findViewById(R.id.descriptionCard);
         consumptionStatus = (TextView) findViewById(R.id.consumptionStatusCard);
         seasonStatus = (TextView) findViewById(R.id.seasonStatusCard);
-        fishPhoto = (ImageView) findViewById(R.id.fishPhoto);
+        fishPhoto = (ImageView) findViewById(R.id.largeFishPhoto);
 
         closeButton = (Button) dialog.findViewById(R.id.closeButton);
         sendButton = (Button) dialog.findViewById(R.id.sendButton);
@@ -204,6 +204,7 @@ public class FishDetails extends AppCompatActivity
 
         System.out.println(imageString);
         int resID = getResources().getIdentifier(imageString , "drawable", getPackageName());
+        System.out.println(resID);
         fishPhoto.setImageResource(resID);
 
         if (getIntent().getExtras().getBoolean("isConsumable")) {

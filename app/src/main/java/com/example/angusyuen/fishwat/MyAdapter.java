@@ -86,10 +86,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         imageString = imageString.substring(0, imageString.length() - 4);
         holder.image = imageString;
 
-        System.out.println("Image string: " + imageString);
         int resID = context.getResources().getIdentifier(imageString , "drawable", context.getPackageName());
-
-        System.out.println(resID);
         holder.fishPhoto.setImageResource(resID);
     }
 

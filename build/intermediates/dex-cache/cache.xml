@@ -2,67 +2,67 @@
 <items version="2" >
 
     <item
-        jar="/home/emma/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
-        <dex dex="/home/emma/StudioProjects/Fishwat/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.1.1_be6e138bd1827ee7dce658ae3c159aa02a7c759e/classes.dex" />
-    </item>
-    <item
-        jar="/home/emma/StudioProjects/Fishwat/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.1.1/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="5e412e954a24c5310a459c09870e4e2081aceb03">
-        <dex dex="/home/emma/StudioProjects/Fishwat/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-23.1.1_b7f99b498f2138c12a98a25b5a5f3fb26c6844ac/classes.dex" />
-    </item>
-    <item
-        jar="/home/emma/StudioProjects/Fishwat/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="76d465598d94539d3a502523c5527740b187ee64">
-        <dex dex="/home/emma/StudioProjects/Fishwat/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_e844ddfd7af1c32236190d5d941f55a369f8a527/classes.dex" />
-    </item>
-    <item
-        jar="/home/emma/StudioProjects/Fishwat/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="3ac209e3df4ae05f2a9e3764a14eb8d6a9ac970a">
-        <dex dex="/home/emma/StudioProjects/Fishwat/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_2d2afa6f0cbfa5e00e210a4594e76e0e645854f1/classes.dex" />
-    </item>
-    <item
-        jar="/home/emma/StudioProjects/Fishwat/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
-        <dex dex="/home/emma/StudioProjects/Fishwat/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.1.1_98cb73a253a92e33ac33b13a3bd4fccb71dd748c/classes.dex" />
-    </item>
-    <item
-        jar="/home/emma/StudioProjects/Fishwat/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
-        <dex dex="/home/emma/StudioProjects/Fishwat/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.1.1_c089bf46433672d02d706c56c4ba74fdb2fab39a/classes.dex" />
-    </item>
-    <item
-        jar="/home/emma/StudioProjects/Fishwat/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
+        jar="/Users/angusyuen/Documents/Fishwat/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
         jumboMode="true"
         revision="23.0.2"
         sha1="09c5e804bc67fc0580360043dff067df574a60d4">
-        <dex dex="/home/emma/StudioProjects/Fishwat/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.1.1_bfc4d5fa27aa50978297febf8aa81307a540c28c/classes.dex" />
+        <dex dex="/Users/angusyuen/Documents/Fishwat/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.1.1_46716cebfef3df410ba8ee5660dd903ffa8af0a1/classes.dex" />
     </item>
     <item
-        jar="/home/emma/StudioProjects/Fishwat/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
+        jar="/Users/angusyuen/Documents/Fishwat/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="fd1bfcbadbd2330e24c3c66ab3665aee085dd10a">
+        <dex dex="/Users/angusyuen/Documents/Fishwat/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_d06c5d2729759cdd086062d180329799a30e29c0/classes.dex" />
+    </item>
+    <item
+        jar="/Users/angusyuen/Documents/Fishwat/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="/Users/angusyuen/Documents/Fishwat/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.1.1_aa1bd3fa3ed50ee5d4ccb2c4cf0c532b76b678e7/classes.dex" />
+    </item>
+    <item
+        jar="/Users/angusyuen/Documents/Fishwat/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
         jumboMode="true"
         revision="23.0.2"
         sha1="379471b2bd17d9737c050345c08e8c7d16589784">
-        <dex dex="/home/emma/StudioProjects/Fishwat/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.1.1_e775f310690858256f19b817fd48c9ccc717b025/classes.dex" />
+        <dex dex="/Users/angusyuen/Documents/Fishwat/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.1.1_df37d3d3f6901881f41bec22dbad14cd51769f1c/classes.dex" />
     </item>
     <item
-        jar="/home/emma/StudioProjects/Fishwat/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
+        jar="/Users/angusyuen/Documents/Fishwat/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="63fccd8c59d3aab16645d9fa36e65d07b21f2e1a">
+        <dex dex="/Users/angusyuen/Documents/Fishwat/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_c83d1a20e32526a505852e7ffcf03873b04f0305/classes.dex" />
+    </item>
+    <item
+        jar="/Users/angusyuen/Documents/Fishwat/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.1.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="5e412e954a24c5310a459c09870e4e2081aceb03">
+        <dex dex="/Users/angusyuen/Documents/Fishwat/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-23.1.1_5aa6bae629dbb4d132e1a61fc27ddb23af3157a7/classes.dex" />
+    </item>
+    <item
+        jar="/Users/angusyuen/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="/Users/angusyuen/Documents/Fishwat/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.1.1_138b8d289b72c70ecff5c51f54fa49f1b3a40f83/classes.dex" />
+    </item>
+    <item
+        jar="/Users/angusyuen/Documents/Fishwat/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
         jumboMode="true"
         revision="23.0.2"
         sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
-        <dex dex="/home/emma/StudioProjects/Fishwat/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.1.1_d7cf0be255cb138766bd44c67cf79be6427aaaad/classes.dex" />
+        <dex dex="/Users/angusyuen/Documents/Fishwat/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.1.1_abda6e46bee0bd506a266c9effdb83290689afc7/classes.dex" />
+    </item>
+    <item
+        jar="/Users/angusyuen/Documents/Fishwat/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="/Users/angusyuen/Documents/Fishwat/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.1.1_a6389e8348e2f3da36af5f85edc2f6463f40efc1/classes.dex" />
     </item>
 
 </items>
