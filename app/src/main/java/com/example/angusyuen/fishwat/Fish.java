@@ -4,16 +4,15 @@ package com.example.angusyuen.fishwat;
  * Created by angusyuen on 23/04/16.
  */
 public class Fish {
-    private Integer id;
     private String nameOfFish;
     private String scientificNameOfFish;
     private String description;
-    private int isConsumable;
+    private String isConsumable;
     private int isSeasonable;
     private String images;
     private String primaryImage;
 
-    public Fish(String name, String scientificNameOfFish, String description, int consumptionStatus,
+    public Fish(String name, String scientificNameOfFish, String description, String consumptionStatus,
                 int seasonStatus, String images, String primaryImage) {
         nameOfFish = name;
         this.scientificNameOfFish = scientificNameOfFish;
@@ -28,7 +27,7 @@ public class Fish {
         return description;
     }
 
-    public int getIsConsumable() {
+    public String getIsConsumable() {
         return isConsumable;
     }
 
