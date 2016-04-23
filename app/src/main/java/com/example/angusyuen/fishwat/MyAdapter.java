@@ -1,6 +1,7 @@
 package com.example.angusyuen.fishwat;
 
 import android.annotation.TargetApi;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.support.v7.widget.RecyclerView;
@@ -20,12 +21,14 @@ import java.util.Calendar;
  */
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private ArrayList<Fish> allFish;
+    private Context context;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
         TextView fishName;
         TextView scientificFishName;
-        ImageView image;
+        String image;
+        ImageView fishPhoto;
         TextView description;
         String isConsumable;
         int isSeasonable;
@@ -35,8 +38,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             super(v);
             fishName = (TextView) v.findViewById(R.id.fishName);
             scientificFishName = (TextView) v.findViewById(R.id.scientificFishName);
-            image = (ImageView) v.findViewById(R.id.fishPhoto);
             description = (TextView) v.findViewById(R.id.description);
+            fishPhoto = (ImageView) v.findViewById(R.id.fishPhoto);
+            context = v.getContext();
 
             v.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -45,6 +49,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                     //myIntent.putExtra("key", 1); // this line is for if we want to send any information from this activity to the next
                     myIntent.putExtra("name", fishName.getText() + " " + scientificFishName.getText());
                     myIntent.putExtra("description", description.getText());
+                    myIntent.putExtra("image", image);
                     myIntent.putExtra("consumptionStatus", isConsumable);
                     myIntent.putExtra("seasonStatus", isSeasonable);
                     v.getContext().startActivity(myIntent);
@@ -76,6 +81,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.description.setText(allFish.get(position).getDescription());
         holder.isConsumable = allFish.get(position).getIsConsumable();
         holder.isSeasonable = allFish.get(position).getIsSeasonable();
+
+        String imageString = allFish.get(position).getPrimaryImage();
+        imageString = imageString.substring(0, imageString.length() - 4);
+        holder.image = imageString;
+
+        System.out.println("Image string: " + imageString);
+        int resID = context.getResources().getIdentifier(imageString , "drawable", context.getPackageName());
+
+        System.out.println(resID);
+        holder.fishPhoto.setImageResource(resID);
     }
 
     @Override

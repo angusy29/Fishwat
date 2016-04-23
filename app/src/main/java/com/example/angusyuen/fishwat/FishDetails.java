@@ -21,6 +21,7 @@ import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,6 +34,7 @@ public class FishDetails extends AppCompatActivity
     private TextView description;
     private TextView consumptionStatus;
     private TextView seasonStatus;
+    private ImageView fishPhoto;
 
     // front end stuff
     private Dialog dialog;   // dialog popup
@@ -157,7 +159,7 @@ public class FishDetails extends AppCompatActivity
         description = (TextView) this.findViewById(R.id.descriptionCard);
         consumptionStatus = (TextView) findViewById(R.id.consumptionStatusCard);
         seasonStatus = (TextView) findViewById(R.id.seasonStatusCard);
-
+        fishPhoto = (ImageView) findViewById(R.id.fishPhoto);
 
         closeButton = (Button) dialog.findViewById(R.id.closeButton);
         sendButton = (Button) dialog.findViewById(R.id.sendButton);
@@ -197,6 +199,12 @@ public class FishDetails extends AppCompatActivity
 
         fishName.setText(getIntent().getStringExtra("name"));
         description.setText(getIntent().getStringExtra("description"));
+        String imageString = getIntent().getStringExtra("image");
+        //imageString = imageString.substring(0, imageString.length() - 4);
+
+        System.out.println(imageString);
+        int resID = getResources().getIdentifier(imageString , "drawable", getPackageName());
+        fishPhoto.setImageResource(resID);
 
         if (getIntent().getExtras().getBoolean("isConsumable")) {
             consumptionStatus.setText("Fish is not consumable!");

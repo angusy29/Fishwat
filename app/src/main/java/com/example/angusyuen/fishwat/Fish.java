@@ -50,4 +50,8 @@ public class Fish {
     public String getScientificNameOfFish() {
         return scientificNameOfFish;
     }
+
+    public String getPrimaryImage() {
+        return primaryImage;
+    }
 }
