@@ -2,6 +2,7 @@ package com.example.angusyuen.fishwat;
 
 import android.annotation.TargetApi;
 import android.app.Dialog;
+import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -22,6 +23,7 @@ import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 
 public class SearchableActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -41,14 +43,22 @@ public class SearchableActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
+        Intent intent = getIntent();
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+            // Handle the normal search query case
+            //String query = intent.getStringExtra(SearchManager.QUERY);
+            //doSearch(query);
+            System.out.println("lol not meant to be here");
+        } else if (Intent.ACTION_VIEW.equals(intent.getAction())) {
+            // Handle a suggestions click (because the suggestions all use ACTION_VIEW)
+            Uri data = intent.getData();
+            //showResult(data);
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+            System.out.println(data);
+            System.out.println("Data: " + data);
+        }
+
+        initialiseGUI();
     }
 
     @Override
@@ -206,7 +216,7 @@ public class SearchableActivity extends AppCompatActivity
             }
         });
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.cameraFAB);
+        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.cameraFAB);
         fab.setOnHoverListener(new View.OnHoverListener() {
             @Override
             public boolean onHover(View v, MotionEvent event) {
@@ -222,7 +232,7 @@ public class SearchableActivity extends AppCompatActivity
                 Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
                 startActivityForResult(intent, 0);
             }
-        });
+        });*/
 
     }
 }

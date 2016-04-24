@@ -104,7 +104,6 @@ public class SQLiteHelper extends SQLiteOpenHelper {
             for (int i = 0; i < cursor.getCount(); i++) {
                 cursor.moveToNext();
 
-                System.out.println("Hello world");
                 System.out.println(cursor.getString(0));
                 System.out.println(cursor.getString(1));
                 System.out.println(cursor.getString(2));
